@@ -28,7 +28,7 @@ public class Player_Movement : MonoBehaviour
         // Player Controls 
         moveX = Input.GetAxis("Horizontal"); //the player can move on the horizontal axis
 
-        if (Input.GetButtonDown ("Jump") == true) //if user presses jump button player will jump
+        if (Input.GetButtonDown ("Jump") && isGrounded == true) //if user presses jump button player will jump
         {
             Jump();
         }
