@@ -20,6 +20,7 @@ public class Player_Movement : MonoBehaviour
     void Update()
     {
         PlayerMove (); // so that the player is able to move every single frame 
+        PlayerRaycast ();
     }
 
     void PlayerMove() 
@@ -72,5 +73,9 @@ public class Player_Movement : MonoBehaviour
         {
             isGrounded = true;
         }
+    }
+    void PlayerRaycast () 
+    {
+        //Everytime when the player touches the enemy the player will bounce off the enemy
     }
 }
