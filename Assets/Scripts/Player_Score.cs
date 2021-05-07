@@ -26,9 +26,17 @@ public class Player_Score : MonoBehaviour
         }
     } 
     void OnTriggerEnter2D (Collider2D trig)
-    {
-        Debug.Log ("Touched the end of the level");
-        CountScore ();
+    { 
+        if (trig.gameObject.name == "EndLevel")
+        {  
+            CountScore ();
+        }
+        if (trig.gameObject.name == "Coin")
+        {
+            playerScore += 100;
+            Destroy (trig.gameObject);
+        }
+        
     }
     void CountScore ()
     {
