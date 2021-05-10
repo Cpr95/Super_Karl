@@ -2,51 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour {
+public class Enemy : MonoBehaviour
+{
+    public int EnemySpeed;
+    public int XMoveDirection;
 
-    public int enemySpeed;
-    public int MoveDirection;
-    public bool moveRight = true;
-
- // Use this for initialization
- void Start () {
-        moveRight = true;
- }
- 
- // Update is called once per frame
- void Update () {
-        if (!moveRight)
-        {
-            MoveDirection = 1;
-        }
-        else
-        {
-            MoveDirection = -1;
-        }
-        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(MoveDirection, 0) * enemySpeed;
-    }
-
-    void OnCollisionEnter2D(Collision2D col)
+    // Update is called once per frame
+    void Update()
     {
-        if (col.gameObject.tag == "Wall")
+        RaycastHit2D hit = Physics2D.Raycast (transform.position, new Vector2 (XMoveDirection, 0));
+        gameObject.GetComponent<Rigidbody2D> ().velocity = new Vector2 (XMoveDirection,0) * EnemySpeed;
+        if (hit.distance < 0.7f)
         {
-            if(MoveDirection == -1)
-            {
-                Flip ();
-            }
-            else
-            {
-                Flip ();
-            }
+            Flip();
         }
     }
 
-    void Flip () 
+    void Flip ()
     {
-        moveRight = !moveRight; // the exclamation mark means not true - facing right does not equal facing right
-        Vector2 localScale = gameObject.transform.localScale;
-        localScale.x *= -1;
-        transform.localScale = localScale; 
-        // if player is facing right and does not want to face right any more, local scale will change the scale to negative
+        if(XMoveDirection > 0)
+        {
+            XMoveDirection = -1;
+        }
+        else 
+        {
+            XMoveDirection = 1;
+        }
     }
+    
 }

@@ -10,17 +10,10 @@ public class Player_Movement : MonoBehaviour
     private float moveX;
     public bool isGrounded;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
         PlayerMove (); // so that the player is able to move every single frame 
-        PlayerRaycast ();
     }
 
     void PlayerMove() 
@@ -29,7 +22,7 @@ public class Player_Movement : MonoBehaviour
         // Player Controls 
         moveX = Input.GetAxis("Horizontal"); //the player can move on the horizontal axis
 
-        if (Input.GetButtonDown ("Jump") && isGrounded == true) //if user presses jump button player will jump
+        if (Input.GetButtonDown ("Jump") && isGrounded == true) //if user presses jump button and player is grounded player will jump
         {
             Jump();
         }
@@ -66,16 +59,12 @@ public class Player_Movement : MonoBehaviour
         transform.localScale = localScale; 
         // if player is facing right and does not want to face right any more, local scale will change the scale to negative
     }
+
     void OnCollisionEnter2D (Collision2D col)
     {
-        Debug.Log ("Player has collided with " + col.collider.name);
         if (col.gameObject.tag == "ground")
         {
             isGrounded = true;
         }
-    }
-    void PlayerRaycast () 
-    {
-        //Everytime when the player touches the enemy the player will bounce off the enemy
-    }
+    }   
 }
