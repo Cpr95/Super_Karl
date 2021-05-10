@@ -1,51 +1,85 @@
-﻿ using System.Collections;
- using System.Collections.Generic;
- using UnityEngine;
- 
- public class EnemyPatrol : MonoBehaviour
- {
-     public float speed;
-     public float distance;
- 
-     private bool movingRight = true;
- 
-     public Transform groundDetection;
- 
-     void Update()
-     {
-         transform.Translate(Vector2.right * speed * Time.deltaTime);
- 
-         RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, distance);
-         if (groundInfo.collider == false)
-         {
-             if (movingRight == true)
-             {
-                 transform.eulerAngles = new Vector3(0, -180, 0);
-                 movingRight = false;
-             }
-             else
-             {
-                 transform.eulerAngles = new Vector3(0, 0, 0);
-                 movingRight = true;
-             }
-           
-         }
-            void OnCollisionEnter2D(Collision2D collision);
-            
-     if (collide.collider.gameObject.tag == "Wall")
-         {
-             Debug.Log("E");
-             if (movingRight == true)
-             {
-                 transform.eulerAngles = new Vector3(0, -180, 0);
-                 movingRight = false;
-             }
-             else
-             {
-                 transform.eulerAngles = new Vector3(0, 0, 0);
-                 movingRight = true;
-             }
- 
-         }
-     }
- }
+﻿using System.Collections;
+
+using System.Collections.Generic;
+
+using UnityEngine;
+
+
+
+public class Enemy : MonoBehaviour 
+{
+
+    public int enemySpeed;
+
+    public int xMoveDir;
+
+    bool moveRight;
+
+
+
+// Use this for initialization
+
+void Start () {
+
+        moveRight = true;
+
+}
+
+
+
+// Update is called once per frame
+
+void Update () 
+{
+
+        if (!moveRight)
+
+        {
+
+            xMoveDir = -1;
+
+        }
+
+        else
+
+        {
+
+            xMoveDir = 1;
+
+        }
+
+        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(xMoveDir, 0) * enemySpeed;
+
+    }
+
+
+
+    void OnCollisionEnter2D(Collision2D col)
+
+    {
+
+        if (col.gameObject.tag == "Wall")
+
+        {
+
+            if(xMoveDir == 1)
+
+            {
+
+                moveRight = false;
+
+            }
+
+            else
+
+            {
+
+                moveRight = true;
+
+            }
+
+        }
+
+    }
+
+}
