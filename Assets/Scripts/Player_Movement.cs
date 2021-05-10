@@ -5,11 +5,16 @@ using UnityEngine;
 public class Player_Movement : MonoBehaviour
 {
     public int playerSpeed = 10; // This is for the characters speed
-    public bool facingRight = true; // true or false, is the player facing left or right ?
+    public bool facingRight = false; // true or false, is the player facing left or right ?
     public int playerJump = 1250;
     private float moveX;
     public bool isGrounded;
 
+    void Start ()
+    {
+       
+    }
+    
     // Update is called once per frame
     void Update()
     {
@@ -28,6 +33,14 @@ public class Player_Movement : MonoBehaviour
         }
 
         // Player Animations
+        if (moveX != 0)
+        {
+            GetComponent<Animator>().SetBool ("IsWalking", true);
+        }
+        else
+        {
+            GetComponent<Animator>().SetBool ("IsWalking", false);
+        }
 
         // Player Direction
         if (moveX < 0.0f && facingRight == false)  // if player is not facing right, the player will now face to the left

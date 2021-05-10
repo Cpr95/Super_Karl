@@ -11,7 +11,9 @@ public int playerScore = 0;
 public GameObject timeLeftUI;
 public GameObject playerScoreUI;   
 
-    
+    void Start() {
+        DataManagement.datamanagement.LoadData();
+    }
     
     // Update is called once per frame
     void Update()
@@ -41,7 +43,7 @@ public GameObject playerScoreUI;
     {
         Debug.Log ("Data says high score is currently" + DataManagement.datamanagement.highScore);
         playerScore = playerScore + (int)(timeLeft * 10);
-        DataManagement.datamanagement.highScore = playerScore + (int)(timeLeft * 10);
+        DataManagement.datamanagement.highScore = playerScore + (int)(timeLeft * 100);
         DataManagement.datamanagement.SaveData ();
         Debug.Log ("Now that we have adde the score toDataManagement, Data says high score is currently" + DataManagement.datamanagement.highScore);
     }
