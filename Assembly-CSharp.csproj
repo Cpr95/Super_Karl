@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\Camera_Operation.cs" />
      <Compile Include="Assets\Scripts\DataManagement.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
+     <Compile Include="Assets\Scripts\PlayerHp.cs" />
      <Compile Include="Assets\Scripts\Player_Health.cs" />
      <Compile Include="Assets\Scripts\Player_Movement.cs" />
      <Compile Include="Assets\Scripts\Player_Score.cs" />
