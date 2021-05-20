@@ -10,12 +10,9 @@ public class Player_Movement : MonoBehaviour
     private float moveX;
     public bool isGrounded;
 
-    public GameManager theGM;
-    private LivesManager theLM;
-
     void Start ()
     {
-       theLM = FindObjectofType<LivesManager>();
+       
     }
     
     // Update is called once per frame
@@ -94,7 +91,7 @@ public class Player_Movement : MonoBehaviour
             {
                 Debug.Log("Ouch!");
                 //theGM.GameOver();
-                theLM.TakeLife();
+                //theLM.TakeLife();
             }
     }   
 }

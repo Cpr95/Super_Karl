@@ -60,7 +60,8 @@
      <Compile Include="Assets\Scripts\DataManagement.cs" />
      <Compile Include="Assets\Scripts\EndGoal.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
-     <Compile Include="Assets\Scripts\LivesManager.cs" />
+     <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\Menus.cs" />
      <Compile Include="Assets\Scripts\Player_Health.cs" />
      <Compile Include="Assets\Scripts\Player_Movement.cs" />
      <Compile Include="Assets\Scripts\Player_Score.cs" />
