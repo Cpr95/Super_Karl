@@ -8,6 +8,7 @@ TagManager:
   - ground
   - Enemy
   - QuestionBlock
+  - EndLevel
   layers:
   - Default
   - TransparentFX

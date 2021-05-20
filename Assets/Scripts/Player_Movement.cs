@@ -79,5 +79,13 @@ public class Player_Movement : MonoBehaviour
         {
             isGrounded = true;
         }
+        if (col.gameObject.tag == "Enemy")
+        {
+            isGrounded = true;
+        }
+        if (col.gameObject.tag == "Wall")
+        {
+            isGrounded = true;
+        }
     }   
 }
