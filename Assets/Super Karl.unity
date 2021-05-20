@@ -2065,6 +2065,7 @@ MonoBehaviour:
   facingRight: 0
   playerJump: 1800
   isGrounded: 1
+  theGM: {fileID: 55289998}
 --- !u!114 &466475282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5757,6 +5758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22b48771e8ec46408bbf1b0247e1286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  theGM: {fileID: 55289998}
 --- !u!212 &1913890122
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -10,9 +10,11 @@ public class Player_Movement : MonoBehaviour
     private float moveX;
     public bool isGrounded;
 
+    public GameManager theGM;
+
     void Start ()
     {
-       
+    
     }
     
     // Update is called once per frame
@@ -90,7 +92,7 @@ public class Player_Movement : MonoBehaviour
         if(col.gameObject.tag == "Enemy")
             {
                 Debug.Log("Ouch!");
-                //theGM.GameOver();
+                theGM.GameOver();
                 //theLM.TakeLife();
             }
     }   
