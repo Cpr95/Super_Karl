@@ -10,9 +10,12 @@ public class Player_Movement : MonoBehaviour
     private float moveX;
     public bool isGrounded;
 
+    public GameManager theGM;
+    private LivesManager theLM;
+
     void Start ()
     {
-       
+       theLM = FindObjectofType<LivesManager>();
     }
     
     // Update is called once per frame
@@ -62,7 +65,7 @@ public class Player_Movement : MonoBehaviour
         //Player Jump Code
         GetComponent<Rigidbody2D>().AddForce (Vector2.up * playerJump); // this will add force upwards associated to the player 
         isGrounded = false;
-   }
+    }
 
     void FlipPlayer() 
     {
@@ -87,5 +90,11 @@ public class Player_Movement : MonoBehaviour
         {
             isGrounded = true;
         }
+        if(col.gameObject.tag == "Enemy")
+            {
+                Debug.Log("Ouch!");
+                //theGM.GameOver();
+                theLM.TakeLife();
+            }
     }   
 }

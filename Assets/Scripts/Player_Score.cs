@@ -28,11 +28,11 @@ public GameObject playerScoreUI;
     } 
     void OnTriggerEnter2D (Collider2D trig)
     { 
-        if (trig.gameObject.name == "EndLevel")
+        if (trig.gameObject.tag == "EndLevel")
         {
             CountScore (); 
         }
-        if (trig.gameObject.name == "Coin")
+        if (trig.gameObject.tag == "Coin")
         {
             playerScore += 100;
             Destroy (trig.gameObject);

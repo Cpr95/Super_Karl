@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - QuestionBlock
   - EndLevel
+  - Coin
   layers:
   - Default
   - TransparentFX
