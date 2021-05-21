@@ -11,10 +11,11 @@ public class Player_Movement : MonoBehaviour
     public bool isGrounded;
 
     public GameManager theGM;
+    private LivesManager theLM;
 
     void Start ()
     {
-    
+        theLM = FindObjectOfType<LivesManager>();
     }
     
     // Update is called once per frame
@@ -92,8 +93,9 @@ public class Player_Movement : MonoBehaviour
         if(col.gameObject.tag == "Enemy")
             {
                 Debug.Log("Ouch!");
-                theGM.GameOver();
-                //theLM.TakeLife();
+                //theGM.GameOver();
+                theGM.Reset();
+                theLM.TakeLife();
             }
     }   
 }

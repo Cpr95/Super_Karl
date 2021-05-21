@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class Badge : MonoBehaviour
 {
-    int BadgeValue = 100;
+    private LivesManager theLM;
 
-    void OnTriggerEnter2D() 
+    void Start()
+
     {
-        print(BadgeValue);
-        Destroy(gameObject);
+        theLM =  FindObjectOfType<LivesManager>();
+    }
+    private void OnTriggerEnter2D(Collider2D other) 
+    {
+        if(other.gameObject.tag == "Player")
+        {
+            theLM.AddLife();
+            Destroy(gameObject);
+        }
     }
 }

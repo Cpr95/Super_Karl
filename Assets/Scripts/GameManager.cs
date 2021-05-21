@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject victoryScreen;
     public GameObject gameOverScreen;
+
+    public string MainMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +29,14 @@ public class GameManager : MonoBehaviour
     {
         gameOverScreen.SetActive(true);
         thePlayer.gameObject.SetActive(false);
+
+        StartCoroutine("GameReset");
+    }
+
+    IEnumerator GameReset()
+    {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene(MainMenu);
     }
 
     public void Reset()

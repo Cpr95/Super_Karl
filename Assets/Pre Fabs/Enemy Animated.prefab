@@ -92,10 +92,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1967554392899641723}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94210cac91f3c4c8e9afd885ab6c94b8, type: 3}
+  m_Script: {fileID: 11500000, guid: 10b5a90e75f2348c1a51ab347a78b6a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 0
+  enemySpeed: 0
+  MoveDirection: 0
+  moveRight: 1
 --- !u!95 &1967554392899641700
 Animator:
   serializedVersion: 3
