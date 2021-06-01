@@ -12,6 +12,7 @@ TagManager:
   - Coin
   - GameManager
   - Game Music
+  - Fall
   layers:
   - Default
   - TransparentFX

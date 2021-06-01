@@ -97,5 +97,12 @@ public class Player_Movement : MonoBehaviour
                 theGM.Reset();
                 theLM.TakeLife();
             }
+        if(col.gameObject.tag == "Fall")
+            {
+                Debug.Log("Ouch!");
+                //theGM.GameOver();
+                theGM.Reset();
+                theLM.TakeLife();
+            }
     }   
 }
