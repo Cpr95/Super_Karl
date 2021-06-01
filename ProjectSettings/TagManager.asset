@@ -10,6 +10,8 @@ TagManager:
   - QuestionBlock
   - EndLevel
   - Coin
+  - GameManager
+  - Game Music
   layers:
   - Default
   - TransparentFX
